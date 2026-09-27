@@ -129,3 +129,47 @@ section h2 { font-size: 2.5rem; color: var(--rojo-pesari); text-align: center; m
     .hero h1 { font-size: 2.5rem; }
     section h2 { font-size: 2rem; }
 }
+/* ESTILOS DEL SHOP */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card-producto {
+    background-color: var(--negro-cajas);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.card-producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 20px;
+}
+
+.producto-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+}
+
+.precio {
+    color: var(--rojo-pesari);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-producto .btn-rojo {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}

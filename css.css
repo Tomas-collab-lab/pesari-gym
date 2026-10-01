@@ -6,15 +6,6 @@
     --gris-texto: #a8dadc;
 }
 
-.logo {
-    position: absolute;
-    left: 20px;
-    top: 5px;
-    width: 80px;
-    height: auto;
-    transition: width 0.3s ease, top 0.3s ease, left 0.3s ease;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--negro-fondo);
@@ -29,10 +20,10 @@ h1, h2, h3, .titulo {
     letter-spacing: 1px;
 }
 
+/* NAVBAR Y LOGO */
 nav {
     background-color: var(--negro-cajas);
     padding: 15px 20px;
-    text-align: center;
     border-bottom: 2px solid var(--celeste-pesari);
     position: sticky;
     top: 0;
@@ -40,6 +31,15 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 70px;
+    height: auto;
+    transition: all 0.3s ease;
 }
 
 .nav-brand {
@@ -81,6 +81,7 @@ nav ul li a:hover {
     color: var(--celeste-pesari);
 }
 
+/* HERO SECTION */
 .hero {
     position: relative;
     min-height: 60vh;
@@ -130,10 +131,11 @@ nav ul li a:hover {
     transition: background 0.3s;
     border: none;
     cursor: pointer;
+    display: inline-block;
 }
 
 .btn-rojo:hover { 
-    background-color: #01a5c8; 
+    background-color: #01839f; 
 }
 
 .container { 
@@ -161,6 +163,7 @@ section h2 {
     margin: 0 auto; 
 }
 
+/* ACTIVIDADES Y PRECIOS */
 .actividades {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -212,6 +215,7 @@ section h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
+/* SHOP */
 .shop-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -222,23 +226,9 @@ section h2 {
 
 .card-producto {
     position: relative;
-}
-
-.card-producto::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    background-color: rgba(1, 165, 200, 0.4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.card-producto:hover::after {
-    opacity: 1;
+    background-color: var(--negro-cajas);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .card-producto img {
@@ -249,6 +239,7 @@ section h2 {
 
 .producto-info {
     padding: 20px;
+    text-align: center;
 }
 
 .producto-info h3 {
@@ -269,6 +260,7 @@ section h2 {
     box-sizing: border-box;
 }
 
+/* FAQ */
 .Preguntas {
     max-width: 1000px;
     margin: 0 auto;
@@ -314,13 +306,14 @@ section h2 {
     border-radius: 5px;
 }
 
+/* RUTINAS */
 .rutinas-section {
     padding-top: 40px;
 }
 
 .rutinas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -344,6 +337,7 @@ section h2 {
     line-height: 1.6;
 }
 
+/* FOOTER */
 footer {
     background-color: var(--negro-cajas);
     padding: 40px 20px 20px;
@@ -379,25 +373,39 @@ footer {
     color: var(--blanco);
 }
 
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-    .logo {
-        width: 55px;
-        top: 15px;
-        left: 10px;
-    }
-    .hero h1 { 
-        font-size: 2.5rem; 
-    }
-    section h2 { 
-        font-size: 2rem; 
-    }
-    nav ul {
+    nav {
         flex-direction: column;
-        gap: 10px;
+        padding-top: 60px; /* Espacio para no tapar el título con el logo */
     }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+
+    .hero h1 { 
+        font-size: 2.2rem; 
+    }
+
+    section h2 { 
+        font-size: 1.8rem; 
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
     .faq {
         grid-template-columns: 1fr;
     }
+
     .faq-contenido h2 {
         text-align: center;
     }

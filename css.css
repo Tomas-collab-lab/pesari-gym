@@ -438,36 +438,3 @@ footer {
     .faq {
         grid-template-columns: 1fr;
     }
-    /* SECCIÓN UBICACIÓN */
-.ubicacion-section {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.mapa-contenedor {
-    border: 2px solid var(--celeste-pesari);
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    /* Efecto de profundidad estático para el mapa */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); 
-    background-color: var(--negro-cajas);
-}
-
-/* Evita que el mapa se deforme en pantallas chicas */
-.mapa-contenedor iframe {
-    display: block;
-    width: 100%;
-}
-
-.info-ubicacion p {
-    font-size: 1.2rem;
-    color: var(--blanco);
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-    .faq-contenido h2 {
-        text-align: center;
-    }
-}

@@ -392,18 +392,18 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-
 .footer-col a, .footer-col p {
     display: block;
     color: var(--gris-texto);
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
+/* Hace que todos los enlaces del footer (redes y dirección) se iluminen en celeste al pasar el cursor */
 .footer-col a:hover {
-    color: var(--blanco);
+    color: var(--celeste-pesari);
 }
 
 /* RESPONSIVE DESIGN */

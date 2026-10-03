@@ -52,5 +52,46 @@
             </div>
         </section>
     </main>
+    <!-- ========================================== -->
+    <!-- SISTEMA DE CARRITO LATERAL (SIN JAVASCRIPT)-->
+    <!-- ========================================== -->
+    
+    <!-- 1. El "cerebro" oculto que detecta el clic -->
+    <input type="checkbox" id="toggle-carrito" class="toggle-carrito">
+
+    <!-- 2. El botón flotante (El changuito de súper) -->
+    <label for="toggle-carrito" class="btn-carrito">
+        <!-- AQUÍ PONES LA IMAGEN DE TU CARRITO -->
+        <img src="tu-imagen-carrito.png" alt="Carrito" style="width: 30px; height: 30px; object-fit: contain; filter: invert(1);">
+        <span class="badge">1</span>
+    </label>
+
+    <!-- 3. El fondo oscuro que oscurece la página al abrir -->
+    <label for="toggle-carrito" class="overlay-carrito"></label>
+
+    <!-- 4. El panel lateral derecho -->
+    <div class="carrito-lateral">
+        <div class="carrito-header">
+            <h2>MI PEDIDO</h2>
+            <!-- Botón de la "X" para cerrar -->
+            <label for="toggle-carrito" class="cerrar-carrito">✖</label>
+        </div>
+
+        <div class="carrito-body">
+            <!-- Producto de ejemplo adentro del carrito -->
+            <div class="item-carrito">
+                <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Proteína">
+                <div class="item-info">
+                    <h4>Whey Protein 1kg</h4>
+                    <p class="precio-item">$25.000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carrito-footer">
+            <h3>Total: $25.000</h3>
+            <a href="https://wa.me/549261155509511?text=Hola!%20Quiero%20encargar%201%20Whey%20Protein" target="_blank" class="btn-rojo btn-verde">Finalizar en WhatsApp</a>
+        </div>
+    </div>
 </body>
 </html>

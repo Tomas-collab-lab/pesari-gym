@@ -324,3 +324,25 @@ footer {
 @media (max-width: 400px) {
     .carrito-lateral { width: 100%; }
 }
+/* ========================================= */
+/* BOTÓN FLOTANTE WHATSAPP                   */
+/* ========================================= */
+.whatsapp-flotante {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    background-color: #25D366; 
+    color: white;
+    padding: 15px 25px; 
+    border-radius: 50px;
+    text-decoration: none; 
+    font-weight: bold;
+    z-index: 999; /* Lo ponemos en 999 para que el carrito (2000) pase por encima si se abre */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+    background-color: #1ebe57;
+    transform: scale(1.1);
+}

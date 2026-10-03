@@ -1,161 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Lixbalt Corporated">
-    <meta name="keywords" content="Gimnasio, Pesari, Tienda, Suplementos, Ropa">
-    <meta name="Description" content="Tienda Oficial Gimnasio PE.SA.RI">
-
     <link rel="stylesheet" href="css.css">
-
-    <title>Tienda | Gimnasio Pe.Sa.Ri</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Tienda | Gimnasio Pe.Sa.Ri</title>
 </head>
-
 <body>
-    
-    <!-- ========================================================= -->
-    <!-- 1. EL "CEREBRO" OCULTO QUE ABRE Y CIERRA EL CARRITO       -->
-    <!-- ========================================================= -->
-    <input type="checkbox" id="toggle-carrito" class="toggle-carrito">
-
-    <!-- ========================================================= -->
-    <!-- MENU DE NAVEGACIÓN                                        -->
-    <!-- ========================================================= -->
     <nav>
-        <div class="div-logo">
-            <a href="index.html"><img class="logo" src="Pesari logo.png" alt="Logo Gimnasio Pe.Sa.Ri"></a>
-        </div>
+        <div class="div-logo"><a href="index.html"><img class="logo" src="Pesari logo.png" alt="Logo"></a></div>
         <div class="nav-brand">
             <div class="titulo">GIMNASIO <span>PE.SA.RI</span></div>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <!-- Como Rutinas está en el inicio, lo mandamos a index.html#rutinas -->
-                <li><a href="index.html#rutinas">Rutinas</a></li>
                 <li><a href="store.html">Tienda</a></li>
-                <li><a href="#contactos">Contactos</a></li>
-                
-                <!-- ÍCONO DEL CARRITO EN EL MENÚ -->
-                <li class="nav-item-carrito">
-                    <label for="toggle-carrito" class="icono-carrito-nav">
-                        <!-- Ícono de carrito dibujado en código (SVG) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <!-- Burbuja de cantidad -->
-                        <span class="badge">1</span>
-                    </label>
-                </li>
+                <li><a href="cart.html">Carrito</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ========================================================= -->
-    <!-- ENCABEZADO DE LA TIENDA                                   -->
-    <!-- ========================================================= -->
-    <header class="hero" style="min-height: 40vh;">
+    <header class="hero">
         <div class="capa-oscura"></div>
         <div class="hero-contenido">
             <h1>NUESTRA TIENDA</h1>
-            <p>Equipamiento y suplementación de primer nivel.</p>
         </div>
     </header>
 
-    <!-- ========================================================= -->
-    <!-- CATÁLOGO DE PRODUCTOS                                     -->
-    <!-- ========================================================= -->
     <main class="container">
         <section id="shop" class="shop-section">
             <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem;">Suplementación deportiva y la indumentaria oficial del gimnasio.</p>
             
             <div class="shop-grid">
-                <!-- PRODUCTO 1 -->
                 <div class="card-producto">
                     <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Proteína Whey">
                     <div class="producto-info">
                         <h3>Whey Protein 1kg</h3>
                         <p class="precio">$25.000</p>
-                        <!-- Este label abre el carrito de la derecha automáticamente -->
-                        <label for="toggle-carrito" class="btn-rojo" style="display: block; cursor: pointer; text-align: center;">Agregar al carrito</label>
+                        <a href="cart-whey.html" class="btn-rojo">Agregar al carrito</a>
                     </div>
                 </div>
 
-                <!-- PRODUCTO 2 -->
                 <div class="card-producto">
                     <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Remera Pesari">
                     <div class="producto-info">
                         <h3>Remera Oficial Oversize</h3>
                         <p class="precio">$18.000</p>
-                        <!-- Este label abre el carrito de la derecha automáticamente -->
-                        <label for="toggle-carrito" class="btn-rojo" style="display: block; cursor: pointer; text-align: center;">Agregar al carrito</label>
+                        <a href="cart-remera.html" class="btn-rojo">Agregar al carrito</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- ========================================================= -->
-    <!-- ESTRUCTURA DEL CARRITO LATERAL (OFF-CANVAS)               -->
-    <!-- ========================================================= -->
-    
-    <!-- Fondo oscuro que aparece atrás del carrito para no distraer -->
-    <label for="toggle-carrito" class="overlay-carrito"></label>
-
-    <!-- El panel que se desliza desde la derecha -->
-    <div class="carrito-lateral">
-        <div class="carrito-header">
-            <h2>MI PEDIDO</h2>
-            <!-- Botón de la X para cerrar -->
-            <label for="toggle-carrito" class="cerrar-carrito">✖</label>
-        </div>
-
-        <div class="carrito-body">
-            <!-- Simulación de un producto ya agregado al carrito -->
-            <div class="item-carrito">
-                <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Proteína">
-                <div class="item-info">
-                    <h4>Whey Protein 1kg</h4>
-                    <p class="precio-item">$25.000</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="carrito-footer">
-            <h3>Total: $25.000</h3>
-            <a href="https://wa.me/549261155509511?text=Hola!%20Quiero%20encargar%201%20Whey%20Protein" target="_blank" class="btn-rojo btn-verde">Finalizar en WhatsApp</a>
-        </div>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- PIE DE PÁGINA (FOOTER)                                    -->
-    <!-- ========================================================= -->
-    <footer>
-        <div class="footer-container" id="contactos">
-            <div class="footer-col">
-                <h3>Soporte</h3>
-                <a href="#">Reglamento del Gimnasio</a>
-                <a href="#">Términos y Condiciones</a>
-            </div>
-            <div class="footer-col">
-                <h3>Redes Sociales</h3>
-                <a href="https://www.instagram.com/gimnasiopesari/?hl=es" target="_blank">Instagram</a>
-                <a href="https://www.facebook.com/gimnasiopesari/" target="_blank">Facebook</a>
-                <a href="https://www.tiktok.com/@pesarigimnasio" target="_blank">TikTok</a>
-                <a href="https://www.threads.com/@gimnasiopesari" target="_blank">Threads</a>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Contacto</h3>
-                <a href="https://maps.app.goo.gl/o1PoibH7epudxnV97" target="_blank">📍 Leandro N. Alem 845, M5519 Dorrego, Guaymallén</a> 
-                <p>📞 +54 9 261 15-550-9511</p>
-                <p>✉️ info@pesari.com</p>
-            </div>
-        </div>
-    </footer>
-
 </body>
 </html>

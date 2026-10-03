@@ -438,3 +438,138 @@ footer {
     .faq {
         grid-template-columns: 1fr;
     }
+    /* ========================================= */
+/* ESTILOS DEL CARRITO LATERAL FLOTANTE      */
+/* ========================================= */
+
+/* Ocultamos el checkbox real */
+.toggle-carrito {
+    display: none;
+}
+
+/* El botón flotante (Changuito) */
+.btn-carrito {
+    position: fixed;
+    top: 100px; /* Lo ponemos arriba a la derecha */
+    right: 20px;
+    background-color: var(--celeste-pesari);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-carrito:hover { transform: scale(1.1); }
+
+/* El numerito rojo de cantidad arriba del carrito */
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e63946; /* Rojo para que resalte */
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El Panel Lateral */
+.carrito-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Totalmente escondido a la derecha */
+    width: 350px;
+    height: 100vh;
+    background-color: var(--negro-cajas);
+    z-index: 1005;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 20px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+/* El fondo oscuro (Overlay) */
+.overlay-carrito {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1004;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* MAGIA CSS: Qué pasa cuando se hace clic (se "marca" el checkbox oculto) */
+#toggle-carrito:checked ~ .carrito-lateral {
+    right: 0; /* Entra en pantalla */
+}
+
+#toggle-carrito:checked ~ .overlay-carrito {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenido interno del panel */
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.cerrar-carrito {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gris-texto);
+}
+.cerrar-carrito:hover { color: var(--rojo-pesari); }
+
+.carrito-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.item-carrito {
+    display: flex;
+    gap: 15px;
+    background-color: var(--negro-fondo);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item-carrito img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.item-info h4 { margin: 0 0 5px 0; color: var(--blanco); font-size: 1.1rem; }
+.precio-item { color: var(--celeste-pesari); font-weight: bold; margin: 0; }
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.carrito-footer h3 { margin-top: 0; color: var(--blanco); }
+.carrito-footer .btn-rojo { width: 100%; display: block; box-sizing: border-box; }
+
+/* Para que no se vea gigante en celulares */
+@media (max-width: 400px) {
+    .carrito-lateral { width: 100%; }
+}
